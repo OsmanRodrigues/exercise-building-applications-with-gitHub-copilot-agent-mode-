@@ -17,14 +17,29 @@ const Activities = () => {
 
   return (
     <div>
-      <h2>Activities</h2>
-      <ul>
-        {activities.map((activity, idx) => (
-          <li key={activity.id || idx}>
-            {activity.name || JSON.stringify(activity)}
-          </li>
-        ))}
-      </ul>
+      <h2 className="mb-4 display-6">Activities</h2>
+      <div className="card mb-4">
+        <div className="card-body">
+          <table className="table table-striped table-bordered">
+            <thead className="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {activities.map((activity, idx) => (
+                <tr key={activity.id || idx}>
+                  <th scope="row">{activity.id || idx + 1}</th>
+                  <td>{activity.name || "-"}</td>
+                  <td>{activity.details || JSON.stringify(activity)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
