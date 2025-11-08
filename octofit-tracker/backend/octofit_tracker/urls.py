@@ -16,8 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .api import router
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.http import JsonResponse
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': request.build_absolute_uri('/api/users/'),
+        'teams': request.build_absolute_uri('/api/teams/'),
+        'activities': request.build_absolute_uri('/api/activities/'),
+        'leaderboard': request.build_absolute_uri('/api/leaderboard/'),
+        'workouts': request.build_absolute_uri('/api/workouts/'),
+    })
 
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
