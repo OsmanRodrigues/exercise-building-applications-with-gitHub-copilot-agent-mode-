@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e3f0ff 100%);
+  min-height: 100vh;
+  color: #22223b;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 48px;
+  margin-right: 16px;
+  vertical-align: middle;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +18,99 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3a5a40;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fefae0;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #0077b6;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.App-link:hover {
+  color: #023e8a;
+}
+
+/* Bootstrap table custom colors */
+.table {
+  background-color: #f8f9fa;
+}
+.table-dark {
+  background-color: #0077b6 !important;
+  color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #e3f0ff;
+}
+
+/* Bootstrap button custom colors */
+.btn-primary {
+  background-color: #0077b6;
+  border-color: #0077b6;
+}
+.btn-primary:hover {
+  background-color: #023e8a;
+  border-color: #023e8a;
+}
+.btn-outline-light {
+  color: #0077b6;
+  border-color: #0077b6;
+}
+.btn-outline-light:hover {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+/* Headings */
+h2,
+.display-5,
+.display-6 {
+  color: #0077b6;
+  font-weight: 700;
+}
+
+/* Navigation */
+.navbar {
+  background: linear-gradient(90deg, #0077b6 0%, #48cae4 100%) !important;
+}
+.navbar-brand {
+  color: #fefae0 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .nav-link {
+  color: #fefae0 !important;
+  font-weight: 500;
+  margin-right: 8px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #e3f0ff !important;
+}
+
+/* Card styling */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.08);
+  border: none;
+}
+.card-body {
+  background: #f8fafc;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 12px;
+  background: #e3f0ff;
 }
 
 @keyframes App-logo-spin {
