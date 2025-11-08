@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Leaderboard = () => {
   const [leaders, setLeaders] = useState([]);
-  const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`;
+  const endpoint = `http://localhost:8000/api/leaderboard/`;
 
   useEffect(() => {
     fetch(endpoint)
